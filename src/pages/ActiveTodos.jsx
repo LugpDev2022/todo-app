@@ -1,3 +1,5 @@
+import { AddTodoInput } from '../components';
+
 export const ActiveTodos = () => {
-  return <div>ActiveTodos</div>;
+  return <AddTodoInput />;
 };
