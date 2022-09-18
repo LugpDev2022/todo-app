@@ -7,11 +7,14 @@ import * as bootstrap from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import TodoApp from './TodoApp';
+import { TodoProvider } from './context/TodoProvider';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <TodoApp />
-    </BrowserRouter>
+    <TodoProvider>
+      <BrowserRouter>
+        <TodoApp />
+      </BrowserRouter>
+    </TodoProvider>
   </React.StrictMode>
 );
