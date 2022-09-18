@@ -1,5 +1,10 @@
-const TodoApp = () => {
-  return <h1>TodoApp</h1>;
-};
+import { AppRouter } from './router/AppRouter';
+
+const TodoApp = () => (
+  <>
+    <h1>#todo</h1>
+    <AppRouter />
+  </>
+);
 
 export default TodoApp;
