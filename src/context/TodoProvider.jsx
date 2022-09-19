@@ -3,7 +3,19 @@ import { TodoContext, todoReducer } from './';
 
 export const TodoProvider = ({ children }) => {
   const initialState = {
-    todos: ['comer', 'dormir'],
+    todos: [
+      {
+        description: 'Comer',
+        done: false,
+        id: 123,
+      },
+
+      {
+        description: 'Dormir',
+        done: true,
+        id: 124,
+      },
+    ],
   };
 
   const [state, dispatch] = useReducer(todoReducer, initialState);

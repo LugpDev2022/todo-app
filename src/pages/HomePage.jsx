@@ -1,13 +1,8 @@
-import { useContext } from 'react';
-import { AddTodoInput } from '../components';
-import { TodoContext } from '../context';
+import { AddTodoInput, TodoList } from '../components';
 
-export const HomePage = () => {
-  const { state } = useContext(TodoContext);
-
-  return (
-    <>
-      <AddTodoInput />;
-    </>
-  );
-};
+export const HomePage = () => (
+  <>
+    <AddTodoInput />
+    <TodoList />
+  </>
+);
