@@ -1,5 +1,6 @@
 import { useReducer } from 'react';
-import { TodoContext, todoReducer } from './';
+
+import { TodoContext, todoReducer, types } from './';
 
 export const TodoProvider = ({ children }) => {
   const initialState = [
@@ -18,8 +19,21 @@ export const TodoProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(todoReducer, initialState);
 
+  const addTodo = ({ description, id, done }) => {
+    const action = {
+      type: types.add,
+      payload: {
+        description,
+        id,
+        done,
+      },
+    };
+
+    dispatch(action);
+  };
+
   return (
-    <TodoContext.Provider value={{ state, dispatch }}>
+    <TodoContext.Provider value={{ state, addTodo }}>
       {children}
     </TodoContext.Provider>
   );

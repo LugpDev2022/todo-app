@@ -7,19 +7,16 @@ export const useAddTodo = () => {
   const [formValue, setFormValue] = useState('');
   const [isTodoValid, setIsTodoValid] = useState(true);
 
-  const { dispatch } = useContext(TodoContext);
+  const { addTodo } = useContext(TodoContext);
+
+  const payload = {
+    description: formValue,
+    id: uid(),
+    done: false,
+  };
 
   const onInputChange = ({ target }) => {
     setFormValue(target.value);
-  };
-
-  const action = {
-    type: types.add,
-    payload: {
-      description: formValue,
-      id: uid(),
-      done: false,
-    },
   };
 
   const onAddTodo = e => {
@@ -30,7 +27,7 @@ export const useAddTodo = () => {
       return;
     }
     setIsTodoValid(true);
-    dispatch(action);
+    addTodo(payload);
     setFormValue('');
   };
 
