@@ -1,11 +1,25 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { uid } from 'uid';
+
+import { TodoContext, types } from '../context';
 
 export const useAddTodo = () => {
   const [formValue, setFormValue] = useState('');
   const [isTodoValid, setIsTodoValid] = useState(true);
 
+  const { dispatch } = useContext(TodoContext);
+
   const onInputChange = ({ target }) => {
     setFormValue(target.value);
+  };
+
+  const action = {
+    type: types.add,
+    payload: {
+      description: formValue,
+      id: uid(),
+      done: false,
+    },
   };
 
   const onAddTodo = e => {
@@ -16,8 +30,8 @@ export const useAddTodo = () => {
       return;
     }
     setIsTodoValid(true);
+    dispatch(action);
     setFormValue('');
-    console.log(formValue);
   };
 
   return { onInputChange, onAddTodo, formValue, isTodoValid };
