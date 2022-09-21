@@ -8,7 +8,7 @@ export const TodoItem = ({ todo }) => {
   const { onToggleTodo } = useContext(TodoContext);
 
   return (
-    <li className='list-group-item'>
+    <li className='list-group-item border-0 px-0'>
       <input
         type='checkbox'
         className='form-check-input me-2'

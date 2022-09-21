@@ -1,3 +1,3 @@
-export * from './ActiveTodos';
+export * from './ActiveTodosPage';
 export * from './CompletedTodosPage';
 export * from './HomePage';
