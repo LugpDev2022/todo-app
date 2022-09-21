@@ -4,11 +4,7 @@ import { TodoContext } from '../context';
 import { TodoItem } from './';
 
 export const ActiveTodosList = () => {
-  const { todos } = useContext(TodoContext);
-
-  const activeTodos = todos.filter(todo => {
-    return todo.done === false;
-  });
+  const { activeTodos } = useContext(TodoContext);
 
   return (
     <div className='row justify-content-center mt-4'>

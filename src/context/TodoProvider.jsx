@@ -16,6 +16,10 @@ export const TodoProvider = ({ children }) => {
 
   const [todos, dispatch] = useReducer(todoReducer, [], init);
 
+  const activeTodos = todos.filter(todo => {
+    return todo.done === false;
+  });
+
   const addTodo = ({ description, id, done }) => {
     const action = {
       type: types.add,
@@ -41,7 +45,7 @@ export const TodoProvider = ({ children }) => {
   };
 
   return (
-    <TodoContext.Provider value={{ todos, addTodo, onToggleTodo }}>
+    <TodoContext.Provider value={{ todos, addTodo, onToggleTodo, activeTodos }}>
       {children}
     </TodoContext.Provider>
   );
