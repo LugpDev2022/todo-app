@@ -10,11 +10,11 @@ import TodoApp from './TodoApp';
 import { TodoProvider } from './context/TodoProvider';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  // <React.StrictMode>
-  <TodoProvider>
-    <BrowserRouter>
-      <TodoApp />
-    </BrowserRouter>
-  </TodoProvider>
-  // </React.StrictMode>
+  <React.StrictMode>
+    <TodoProvider>
+      <BrowserRouter>
+        <TodoApp />
+      </BrowserRouter>
+    </TodoProvider>
+  </React.StrictMode>
 );

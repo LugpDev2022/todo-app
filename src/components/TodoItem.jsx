@@ -18,7 +18,12 @@ export const TodoItem = ({ todo }) => {
         onClick={onToggleTodo}
       />
 
-      <label htmlFor={id}>{description}</label>
+      <label
+        htmlFor={id}
+        className={done ? 'text-decoration-line-through' : ''}
+      >
+        {description}
+      </label>
     </li>
   );
 };
