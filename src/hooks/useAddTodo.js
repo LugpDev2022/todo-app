@@ -1,13 +1,17 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { uid } from 'uid';
 
-import { TodoContext, types } from '../context';
+import { TodoContext } from '../context';
 
 export const useAddTodo = () => {
   const [formValue, setFormValue] = useState('');
   const [isTodoValid, setIsTodoValid] = useState(true);
 
-  const { addTodo } = useContext(TodoContext);
+  const { addTodo, todos } = useContext(TodoContext);
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [addTodo]);
 
   const payload = {
     description: formValue,
@@ -26,6 +30,7 @@ export const useAddTodo = () => {
       setIsTodoValid(false);
       return;
     }
+
     setIsTodoValid(true);
     addTodo(payload);
     setFormValue('');
