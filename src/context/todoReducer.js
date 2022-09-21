@@ -10,10 +10,14 @@ export const todoReducer = (todos, action) => {
       break;
 
     case types.toggle:
-      console.log('toggle todo');
-      break;
+      return todos.map(todo => {
+        if (todo.id === action.payload.id) {
+          return { ...todo, done: !todo.done };
+        }
+        return todo;
+      });
 
     default:
-      console.log('Ningun todo');
+      return [...todos];
   }
 };

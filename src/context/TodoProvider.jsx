@@ -29,8 +29,19 @@ export const TodoProvider = ({ children }) => {
     dispatch(action);
   };
 
+  const onToggleTodo = ({ target }) => {
+    const action = {
+      type: types.toggle,
+      payload: {
+        id: target.id,
+      },
+    };
+
+    dispatch(action);
+  };
+
   return (
-    <TodoContext.Provider value={{ todos, addTodo }}>
+    <TodoContext.Provider value={{ todos, addTodo, onToggleTodo }}>
       {children}
     </TodoContext.Provider>
   );
