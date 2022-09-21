@@ -8,7 +8,9 @@ export const TodoItem = ({ todo }) => {
         className='form-check-input me-2'
         name={id}
         id={id}
+        defaultChecked={done}
       />
+
       <label htmlFor={id}>{description}</label>
     </li>
   );

@@ -3,7 +3,7 @@ import { useReducer } from 'react';
 import { TodoContext, todoReducer, types } from './';
 
 export const TodoProvider = ({ children }) => {
-  const initialState = [
+  const initialtodos = [
     {
       description: 'Comer',
       done: false,
@@ -17,7 +17,19 @@ export const TodoProvider = ({ children }) => {
     },
   ];
 
-  const [state, dispatch] = useReducer(todoReducer, initialState);
+  const init = () => {
+    const todos = localStorage.getItem('todos');
+
+    if (todos === null) {
+      console.log('No hay todos');
+      localStorage.setItem('todos', JSON.stringify([]));
+      return [];
+    }
+
+    return JSON.parse(todos);
+  };
+
+  const [todos, dispatch] = useReducer(todoReducer, [], init);
 
   const addTodo = ({ description, id, done }) => {
     const action = {
@@ -33,7 +45,7 @@ export const TodoProvider = ({ children }) => {
   };
 
   return (
-    <TodoContext.Provider value={{ state, addTodo }}>
+    <TodoContext.Provider value={{ todos, addTodo }}>
       {children}
     </TodoContext.Provider>
   );

@@ -1,9 +1,9 @@
 import { types } from './';
 
-export const todoReducer = (state, action) => {
+export const todoReducer = (todos, action) => {
   switch (action.type) {
     case types.add:
-      return [...state, action.payload];
+      return [...todos, action.payload];
 
     case types.delete:
       console.log('deleting todo');
