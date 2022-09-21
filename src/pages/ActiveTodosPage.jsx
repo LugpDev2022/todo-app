@@ -1,8 +1,8 @@
-import { ActiveTodosList, AddTodoInput } from '../components';
+import { AddTodoInput, TodoList } from '../components';
 
 export const ActiveTodosPage = () => (
   <>
     <AddTodoInput />
-    <ActiveTodosList />
+    <TodoList show='active' />
   </>
 );

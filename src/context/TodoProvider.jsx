@@ -20,6 +20,10 @@ export const TodoProvider = ({ children }) => {
     return todo.done === false;
   });
 
+  const completedTodos = todos.filter(todo => {
+    return todo.done === true;
+  });
+
   const addTodo = ({ description, id, done }) => {
     const action = {
       type: types.add,
@@ -45,7 +49,9 @@ export const TodoProvider = ({ children }) => {
   };
 
   return (
-    <TodoContext.Provider value={{ todos, addTodo, onToggleTodo, activeTodos }}>
+    <TodoContext.Provider
+      value={{ todos, addTodo, onToggleTodo, activeTodos, completedTodos }}
+    >
       {children}
     </TodoContext.Provider>
   );

@@ -1,3 +1,7 @@
-export const CompletedTodosPage = () => {
-  return <div>CompletedTodosPage</div>;
-};
+import { TodoList } from '../components';
+
+export const CompletedTodosPage = () => (
+  <>
+    <TodoList show='completed' />
+  </>
+);
