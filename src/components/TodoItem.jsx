@@ -8,10 +8,10 @@ export const TodoItem = ({ todo }) => {
   const { onToggleTodo } = useContext(TodoContext);
 
   return (
-    <li className='list-group-item border-0 px-0'>
+    <li className='list-group-item border-0 px-0 align-items-center d-flex'>
       <input
         type='checkbox'
-        className='form-check-input me-2'
+        className='form-check-input me-3 p-3 ps-2 pb-2'
         name={id}
         id={id}
         defaultChecked={done}
@@ -20,7 +20,9 @@ export const TodoItem = ({ todo }) => {
 
       <label
         htmlFor={id}
-        className={done ? 'text-decoration-line-through' : ''}
+        className={`${
+          done ? 'text-decoration-line-through' : ''
+        } text-break fs-5`}
       >
         {description}
       </label>
