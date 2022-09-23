@@ -1,8 +1,9 @@
 import { NavLink } from 'react-router-dom';
 
 export const Nav = () => (
+  //TODO: Change Styles
   <div className='row'>
-    <div className='nav justify-content-center mt-4 gap-3'>
+    <div className='nav justify-content-center mt-4 gap-3 px-0'>
       <NavLink to='/' className='nav-link nav-item text-dark'>
         All
       </NavLink>
