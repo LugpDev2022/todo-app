@@ -2,7 +2,7 @@ import { useContext } from 'react';
 
 import { TodoContext } from '../context';
 
-export const TodoItem = ({ todo }) => {
+export const TodoListItem = ({ todo }) => {
   const { id, description, done } = todo;
 
   const { onToggleTodo } = useContext(TodoContext);
