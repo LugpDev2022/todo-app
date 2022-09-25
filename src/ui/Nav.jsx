@@ -7,10 +7,10 @@ export const Nav = () => {
 
   return (
     <div className='row d-flex justify-content-center'>
-      <div className='nav justify-content-between mt-4 gap-3 px-0 col-12 col-md-9 col-lg-5 mx-5'>
+      <div className='nav justify-content-center mt-4 gap-3 px-0'>
         <NavLink
           to='/'
-          className={`nav-link nav-item text-dark pb-0 ${
+          className={`nav-link nav-item text-dark pb-0 my-nav-item p-0 ${
             pathname === '/' ? 'my-active' : ''
           }`}
         >
@@ -18,7 +18,7 @@ export const Nav = () => {
         </NavLink>
         <NavLink
           to='/active'
-          className={`nav-link nav-item text-dark pb-0 ${
+          className={`nav-link nav-item text-dark pb-0 my-nav-item p-0 ${
             pathname === '/active' ? 'my-active' : ''
           }`}
         >
@@ -27,7 +27,7 @@ export const Nav = () => {
 
         <NavLink
           to='/completed'
-          className={`nav-link nav-item text-dark pb-0 ${
+          className={`nav-link nav-item text-dark pb-0 my-nav-item p-0 ${
             pathname === '/completed' ? 'my-active' : ''
           } `}
         >
@@ -35,8 +35,8 @@ export const Nav = () => {
         </NavLink>
       </div>
 
-      <div className='col-12 col-md-9 col-lg-6 px-4 mx-5'>
-        <div className='si'></div>
+      <div className='col-12 col-md-9 col-lg-6 px-4'>
+        <div className='bar'></div>
       </div>
     </div>
   );
