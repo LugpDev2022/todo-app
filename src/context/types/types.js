@@ -4,4 +4,5 @@ export const types = {
   add: 'ADD TODO',
   toggle: 'TOGGLE TODO',
   delete: 'DELETE TODO',
+  deleteAll: 'DELETE ALL TODOS',
 };

@@ -6,8 +6,8 @@ export const todoReducer = (todos, action) => {
       return [...todos, action.payload];
 
     case types.delete:
-      console.log('deleting todo');
-      break;
+      const newTodos = todos.filter(todo => todo.id !== action.payload.id);
+      return newTodos;
 
     case types.toggle:
       return todos.map(todo => {
@@ -17,7 +17,11 @@ export const todoReducer = (todos, action) => {
         return todo;
       });
 
+    case types.deleteAll:
+      const filteredTodos = todos.filter(todo => todo.done !== true);
+      return filteredTodos;
+
     default:
-      return [...todos];
+      return todos;
   }
 };

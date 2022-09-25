@@ -16,13 +16,9 @@ export const TodoProvider = ({ children }) => {
 
   const [todos, dispatch] = useReducer(todoReducer, [], init);
 
-  const activeTodos = todos.filter(todo => {
-    return todo.done === false;
-  });
+  const activeTodos = todos.filter(todo => todo.done === false);
 
-  const completedTodos = todos.filter(todo => {
-    return todo.done === true;
-  });
+  const completedTodos = todos.filter(todo => todo.done === true);
 
   const addTodo = ({ description, id, done }) => {
     const action = {
@@ -48,9 +44,36 @@ export const TodoProvider = ({ children }) => {
     dispatch(action);
   };
 
+  const onDeleteTodo = todo => {
+    const action = {
+      type: types.delete,
+      payload: {
+        id: todo.current.id,
+      },
+    };
+
+    dispatch(action);
+  };
+
+  const onDeleteAll = () => {
+    const action = {
+      type: types.deleteAll,
+    };
+
+    dispatch(action);
+  };
+
   return (
     <TodoContext.Provider
-      value={{ todos, addTodo, onToggleTodo, activeTodos, completedTodos }}
+      value={{
+        activeTodos,
+        addTodo,
+        completedTodos,
+        onDeleteAll,
+        onDeleteTodo,
+        onToggleTodo,
+        todos,
+      }}
     >
       {children}
     </TodoContext.Provider>
