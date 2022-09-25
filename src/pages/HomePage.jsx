@@ -1,8 +1,16 @@
-import { AddTodoInput, TodoList } from '../components';
+import { useContext } from 'react';
 
-export const HomePage = () => (
-  <>
-    <AddTodoInput />
-    <TodoList show='all' />
-  </>
-);
+import { AddTodoInput, TodoList } from '../components';
+import { TodoContext } from '../context';
+import { TodosAlert } from '../ui';
+
+export const HomePage = () => {
+  const { todos } = useContext(TodoContext);
+
+  return (
+    <>
+      <AddTodoInput />
+      {todos.length < 1 ? <TodosAlert /> : <TodoList show='all' />}
+    </>
+  );
+};

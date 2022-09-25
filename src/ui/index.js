@@ -1,3 +1,3 @@
 export * from './Nav';
-export * from './NoCompletedTodosAlert';
+export * from './TodosAlert';
 export * from './NotValidTodoAlert';
