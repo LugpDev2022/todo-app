@@ -5,7 +5,7 @@ import { VscTrash } from 'react-icons/vsc';
 import { TodoContext } from '../context';
 
 export const DeleteAllTodos = () => {
-  const { onDeleteAll, todos } = useContext(TodoContext);
+  const { onDeleteAll, todos, completedTodos } = useContext(TodoContext);
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
@@ -17,14 +17,12 @@ export const DeleteAllTodos = () => {
         <button
           type='button'
           onClick={onDeleteAll}
-          className='btn btn-danger px-3 py-2 fs-5 d-flex align-items-center'
+          className='btn btn-danger px-2 fs-5 d-flex align-items-center'
         >
-          <VscTrash className='fs-2 me-2' />
+          <VscTrash className='fs-3 me-2' />
           Delete All
         </button>
       </div>
     </div>
   );
 };
-
-// col-12 col-md-9 col-lg-3 col-xl-2
