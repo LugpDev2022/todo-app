@@ -1,0 +1,15 @@
+.my-active::after {
+  content: '';
+  width: auto;
+  height: 5px;
+  margin-top: 20px;
+  border-radius: 5px 5px 0px 0px;
+  background-color: #2f80ed;
+  display: block;
+}
+
+.si {
+  height: 1px;
+  display: block;
+  background-color: black;
+}
