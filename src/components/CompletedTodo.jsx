@@ -12,7 +12,7 @@ export const CompletedTodo = ({ todo }) => {
   const { id, description, done } = todo;
 
   return (
-    <li className='list-group-item border-0 px-0 align-items-center d-flex'>
+    <li className='list-group-item border-0 px-0 align-items-center d-flex animate__animated animate__fadeInLeft'>
       <input
         type='checkbox'
         className='form-check-input me-3 p-3 ps-2 pb-2'

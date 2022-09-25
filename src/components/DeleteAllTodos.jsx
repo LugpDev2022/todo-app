@@ -12,7 +12,7 @@ export const DeleteAllTodos = () => {
   }, [todos]);
 
   return (
-    <div className='row mt-4 justify-content-center'>
+    <div className='row mt-4 justify-content-center animate__animated animate__fadeInLeft'>
       <div className='col-12 col-md-9 col-lg-6 px-4 d-flex justify-content-center justify-content-lg-end'>
         <button
           type='button'

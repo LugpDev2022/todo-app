@@ -6,6 +6,8 @@ import { BrowserRouter } from 'react-router-dom';
 import * as bootstrap from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import 'animate.css';
+
 import TodoApp from './TodoApp';
 import { TodoProvider } from './context/TodoProvider';
 
