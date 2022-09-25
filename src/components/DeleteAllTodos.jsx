@@ -5,7 +5,7 @@ import { VscTrash } from 'react-icons/vsc';
 import { TodoContext } from '../context';
 
 export const DeleteAllTodos = () => {
-  const { onDeleteAll, todos, completedTodos } = useContext(TodoContext);
+  const { onDeleteAll, todos } = useContext(TodoContext);
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
