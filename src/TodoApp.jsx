@@ -1,6 +1,6 @@
 import { AppRouter } from './router/AppRouter';
 
-import { Nav } from './ui';
+import { Nav, Footer } from './ui';
 
 const TodoApp = () => (
   <div className='container'>
@@ -11,6 +11,7 @@ const TodoApp = () => (
     </div>
     <Nav />
     <AppRouter />
+    <Footer />
   </div>
 );
 
